@@ -8,14 +8,14 @@ class LedRepository:
 
     def Flow(self):
         self.ledServ.lightSingleLed(0, [255, 255, 255])
-        time.sleep(1)
+        time.sleep(0.5)
         self.ledServ.turnOffAllLed()
         self.ledServ.lightSingleLed(1, [255, 0, 0])
-        time.sleep(1)
+        time.sleep(0.5)
         self.ledServ.turnOffAllLed()
         self.ledServ.lightSingleLed(2, [0, 255, 0])
-        time.sleep(1)
+        time.sleep(0.5)
         self.ledServ.turnOffAllLed()
         self.ledServ.lightSingleLed(3, [0, 0, 255])
-        time.sleep(1)
+        time.sleep(0.5)
         self.ledServ.turnOffAllLed()
