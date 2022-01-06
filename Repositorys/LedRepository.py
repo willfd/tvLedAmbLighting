@@ -54,3 +54,6 @@ class LedRepository:
                 print(c)
             color = colors[c]
             self.ledServ.blinkSingleLed(i, [color[0], color[1], color[2]], blink_length)
+            
+    def Check(self, number_led, blink_length):
+            self.ledServ.blinkSingleLed(number_led, [0, 0, 255], blink_length)
