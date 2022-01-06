@@ -79,3 +79,10 @@ class LedRepository:
             self.ledServ.blinkSingleLed((number_leds // 2) + 1, colour, blink_length)
         else:
             self.ledServ.blinkSingleLed((number_leds // 2), colour, blink_length)
+
+    def BluesNTwos(self, blink_length, loops):
+        for i in range(loops):
+            self.ledServ.lightAllLed([0, 0, 255])
+            time.sleep(blink_length)
+            self.ledServ.lightAllLed([255, 0, 0])
+            time.sleep(blink_length)

@@ -8,7 +8,8 @@ def main():
     lr = LedRepository()
     # lr.Flow()
     # lr.Rainbow(100, 0.01)
-    lr.Bouncer(10, [255, 0, 0], 0.01)
+    # lr.Bouncer(10, [255, 0, 0], 0.01)
+    lr.BluesNTwos(0.01, 100)
     # lr.Check(2, 2)
     #imr.tvSetup()
 
