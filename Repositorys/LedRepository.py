@@ -45,10 +45,10 @@ class LedRepository:
         self.ledServ.blinkSingleLed(31, [125, 0, 0], 0.05)
 
     def Rainbow(self, number_leds, blink_length):
-        colors = [[255, 0, 0], [255, 125, 0], [255, 255, 0]]
+        colors = [[255, 0, 0], [255, 125, 0], [255, 255, 0], [125, 255, 0], [0, 255, 0], [0, 255, 125]]
         for i in range(number_leds):
             c = i
-            if c > len(colors):
+            if c >= len(colors):
                 print(f"c is over 4 c: {c}")
                 c = c % len(colors)
                 print(c)
