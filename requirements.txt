@@ -2,3 +2,4 @@ numpy~=1.19.5
 opencv-python~=4.5.5.62
 Pillow~=8.4.0
 matplotlib~=3.3.4
+adafruit-circuitpython-neopixel~=6.2.3
