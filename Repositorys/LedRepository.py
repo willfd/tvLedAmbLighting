@@ -49,7 +49,7 @@ class LedRepository:
         for i in range(number_leds):
             c = i
             if c >= len(colors):
-                print(f"c is over 4 c: {c}")
+                print(f"c is over {len(colors)} c: {c}")
                 c = c % len(colors)
                 print(c)
             color = colors[c]

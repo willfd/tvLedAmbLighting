@@ -14,7 +14,7 @@ class LedService:
         g = colour[1]
         b = colour[2]
         self.pixels[led_number] = (r, g, b)
-        print(f"light {led_number} lit")
+        print(f"light {led_number} lit -- colour ({r}{g}{b}")
     
     def turnOffSingleLed(self, led_number):
         self.pixels[led_number] = (0, 0, 0)
