@@ -49,11 +49,15 @@ class LedRepository:
         for i in range(number_leds):
             c = i
             if c >= len(colors):
-                print(f"c is over {len(colors)} c: {c}")
                 c = c % len(colors)
                 print(c)
             color = colors[c]
             self.ledServ.blinkSingleLed(i, [color[0], color[1], color[2]], blink_length)
             
     def Check(self, number_led, blink_length):
-            self.ledServ.blinkSingleLed(number_led, [0, 0, 255], blink_length)
+        print("should show red")
+        self.ledServ.blinkSingleLed(number_led, [255, 0, 0], blink_length)
+        print("should show green")
+        self.ledServ.blinkSingleLed(number_led, [0, 255, 0], blink_length)
+        print("should show blue")
+        self.ledServ.blinkSingleLed(number_led, [0, 0, 255], blink_length)
