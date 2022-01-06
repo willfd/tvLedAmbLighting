@@ -6,7 +6,8 @@ from Repositorys.LedRepository import LedRepository
 def main():
     #imr = ImageRepository('Resource/TV_TEST_PLAIN_170MM.jpg')
     lr = LedRepository()
-    lr.Flow()
+    # lr.Flow()
+    lr.Rainbow(100, 0.01)
     #imr.tvSetup()
 
 

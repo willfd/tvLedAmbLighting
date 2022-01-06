@@ -42,3 +42,8 @@ class LedRepository:
         self.ledServ.blinkSingleLed(29, [125, 125, 125], 0.05)
         self.ledServ.blinkSingleLed(30, [125, 125, 0], 0.05)
         self.ledServ.blinkSingleLed(31, [125, 0, 0], 0.05)
+
+    def Rainbow(self, number_leds, blink_length):
+        for i in range(number_leds):
+            self.ledServ.blinkSingleLed(i, [255-i, 255-i, 255-i], blink_length)
+
