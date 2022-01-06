@@ -54,15 +54,14 @@ class LedRepository:
             color = colors[c]
             if not trailing:
                 self.ledServ.blinkSingleLed(i, [color[0], color[1], color[2]], blink_length)
-                break
-
-            self.ledServ.lightSingleLed(i, [color[0], color[1], color[2]])
-            if i > 0:
-                if c > 0:
-                    color = colors[c-1]
-                self.ledServ.lightSingleLed(i-1, [color[0], color[1], color[2]])
-                time.sleep(blink_length)
-            self.ledServ.turnOffAllLed()
+            else:
+                self.ledServ.lightSingleLed(i, [color[0], color[1], color[2]])
+                if i > 0:
+                    if c > 0:
+                        color = colors[c-1]
+                    self.ledServ.lightSingleLed(i-1, [color[0], color[1], color[2]])
+                    time.sleep(blink_length)
+                self.ledServ.turnOffAllLed()
             
     def Check(self, number_led, blink_length):
         print("should show red")
