@@ -1,6 +1,5 @@
 from Services.LedService import LedService
 import time
-import math
 
 
 class LedRepository:
@@ -45,14 +44,21 @@ class LedRepository:
         self.ledServ.blinkSingleLed(31, [125, 0, 0], 0.05)
 
     def Rainbow(self, number_leds, blink_length):
-        colors = [[255, 0, 0], [255, 125, 0], [255, 255, 0], [125, 255, 0], [0, 255, 0], [0, 255, 125], [0, 255, 255], [0, 125, 255], [0, 0, 255], [125, 0, 255], [255, 0, 255], [255, 0, 125]]
+        colors = [[255, 0, 0], [255, 125, 0], [255, 255, 0], [125, 255, 0], [0, 255, 0], [0, 255, 125], [0, 255, 255],
+                  [0, 125, 255], [0, 0, 255], [125, 0, 255], [255, 0, 255], [255, 0, 125]]
         for i in range(number_leds):
             c = i
             if c >= len(colors):
                 c = c % len(colors)
                 print(c)
             color = colors[c]
-            self.ledServ.blinkSingleLed(i, [color[0], color[1], color[2]], blink_length)
+            self.ledServ.lightSingleLed(i, [color[0], color[1], color[2]])
+            if i > 0:
+                if c > 0:
+                    color = colors[c-1]
+                self.ledServ.lightSingleLed(i-1, [color[0], color[1], color[2]])
+                time.sleep(blink_length)
+            self.ledServ.turnOffAllLed()
             
     def Check(self, number_led, blink_length):
         print("should show red")
