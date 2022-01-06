@@ -50,7 +50,6 @@ class LedRepository:
             c = i
             if c >= len(colors):
                 c = c % len(colors)
-                print(c)
             color = colors[c]
             if not trailing:
                 self.ledServ.blinkSingleLed(i, [color[0], color[1], color[2]], blink_length)
