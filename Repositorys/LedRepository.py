@@ -75,7 +75,7 @@ class LedRepository:
         min_led = 0
         for i in range(number_leds//2):
             self.ledServ.blinkMultipleLeds([max_led-i, min_led+i], colour, blink_length)
-        if number_leds%2:
-            self.ledServ.lightSingleLed((number_leds//2) + 1, colour)
-        else:
+        if number_leds % 2:
             self.ledServ.lightSingleLed((number_leds / 2), colour)
+        else:
+            self.ledServ.lightSingleLed((number_leds // 2) + 1, colour)
