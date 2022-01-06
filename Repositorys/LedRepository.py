@@ -49,6 +49,8 @@ class LedRepository:
         for i in range(number_leds):
             c = i
             if c > len(colors):
+                print(f"c is over 4 c: {c}")
                 c = c % len(colors)
+                print(c)
             color = colors[c]
             self.ledServ.blinkSingleLed(i, [color[0], color[1], color[2]], blink_length)
