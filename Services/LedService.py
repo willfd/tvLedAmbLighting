@@ -13,7 +13,7 @@ class LedService:
         r = colour[0]
         g = colour[1]
         b = colour[2]
-        self.pixels[led_number] = (r, g, b)
+        self.pixels[led_number] = (r, b, g)
         print(f"light {led_number} lit -- colour ({r}{g}{b}")
     
     def turnOffSingleLed(self, led_number):
@@ -23,7 +23,7 @@ class LedService:
         r = colour[0]
         g = colour[1]
         b = colour[2]
-        self.pixels[led_number] = (r, g, b)
+        self.pixels[led_number] = (r, b, g)
         print(f"light {led_number} lit")
         time.sleep(blink_length)
         self.turnOffSingleLed(led_number)
@@ -32,7 +32,7 @@ class LedService:
         r = colour[0]
         g = colour[1]
         b = colour[2]
-        self.pixels.fill((r, g, b))
+        self.pixels.fill((r, b, g))
 
     def turnOffAllLed(self):
         self.pixels.fill((0, 0, 0))
