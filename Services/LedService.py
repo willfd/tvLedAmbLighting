@@ -22,5 +22,8 @@ class LedService:
         b = colour[2]
         self.pixels.fill((r, g, b))
 
+    def turnOffAllLed(self):
+        self.pixels.fill((0, 0, 0))
+
     def show(self):
         self.pixels.show()
