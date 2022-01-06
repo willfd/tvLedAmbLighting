@@ -14,6 +14,7 @@ class LedService:
         g = colour[1]
         b = colour[2]
         self.pixels[led_number] = (r, g, b)
+        print(f"light {led_number} lit")
 
     def lightAllLed(self, colour: [int, int, int]):
         r = colour[0]
