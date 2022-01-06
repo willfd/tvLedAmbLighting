@@ -69,3 +69,9 @@ class LedRepository:
         self.ledServ.blinkSingleLed(number_led, [0, 255, 0], blink_length)
         print("should show blue")
         self.ledServ.blinkSingleLed(number_led, [0, 0, 255], blink_length)
+
+    def Bouncer(self, number_leds, colour: [int, int, int], blink_length):
+        max_led = number_leds
+        min_led = 0
+        for i in range(number_leds/2):
+            self.ledServ.blinkMultipleLeds([max_led-i, min_led+i], colour, blink_length)
