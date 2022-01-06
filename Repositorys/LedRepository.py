@@ -1,5 +1,6 @@
 from Services.LedService import LedService
 import time
+import math
 
 
 class LedRepository:
@@ -45,5 +46,6 @@ class LedRepository:
 
     def Rainbow(self, number_leds, blink_length):
         for i in range(number_leds):
-            self.ledServ.blinkSingleLed(i, [255-i, 255-(i*2), 0+i], blink_length)
+            light = math.ceil(i*2.5)
+            self.ledServ.blinkSingleLed(i, [255-light, 255-light, 255-light], blink_length)
 
