@@ -43,7 +43,7 @@ class LedRepository:
         self.ledServ.blinkSingleLed(30, [125, 125, 0], 0.05)
         self.ledServ.blinkSingleLed(31, [125, 0, 0], 0.05)
 
-    def Rainbow(self, number_leds, blink_length):
+    def Rainbow(self, number_leds, blink_length, trailing: int):
         colors = [[255, 0, 0], [255, 125, 0], [255, 255, 0], [125, 255, 0], [0, 255, 0], [0, 255, 125], [0, 255, 255],
                   [0, 125, 255], [0, 0, 255], [125, 0, 255], [255, 0, 255], [255, 0, 125]]
         for i in range(number_leds):
@@ -52,6 +52,10 @@ class LedRepository:
                 c = c % len(colors)
                 print(c)
             color = colors[c]
+            if not trailing:
+                self.ledServ.blinkSingleLed(i, [color[0], color[1], color[2]], blink_length)
+                break
+
             self.ledServ.lightSingleLed(i, [color[0], color[1], color[2]])
             if i > 0:
                 if c > 0:
