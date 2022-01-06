@@ -73,5 +73,5 @@ class LedRepository:
     def Bouncer(self, number_leds, colour: [int, int, int], blink_length):
         max_led = number_leds
         min_led = 0
-        for i in range(number_leds/2):
+        for i in range(number_leds//2):
             self.ledServ.blinkMultipleLeds([max_led-i, min_led+i], colour, blink_length)
