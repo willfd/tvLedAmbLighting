@@ -1,5 +1,6 @@
 import neopixel
 import board
+import time
 
 
 class LedService:
@@ -15,6 +16,18 @@ class LedService:
         b = colour[2]
         self.pixels[led_number] = (r, g, b)
         print(f"light {led_number} lit")
+    
+    def turnOffSingleLed(self, led_number):
+        self.pixels[led_number] = (0, 0, 0)
+        
+    def blinkSingleLed(self, led_number, colour: [int, int, int], blink_length):
+        r = colour[0]
+        g = colour[1]
+        b = colour[2]
+        self.pixels[led_number] = (r, g, b)
+        print(f"light {led_number} lit")
+        time.sleep(blink_length)
+        self.turnOffSingleLed(led_number)
 
     def lightAllLed(self, colour: [int, int, int]):
         r = colour[0]
