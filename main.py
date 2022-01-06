@@ -7,8 +7,8 @@ def main():
     #imr = ImageRepository('Resource/TV_TEST_PLAIN_170MM.jpg')
     lr = LedRepository()
     # lr.Flow()
-    #lr.Rainbow(100, 0.1)
-    lr.Check(2, 2)
+    lr.Rainbow(100, 0.01)
+    # lr.Check(2, 2)
     #imr.tvSetup()
 
 
