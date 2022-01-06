@@ -86,3 +86,4 @@ class LedRepository:
             time.sleep(blink_length)
             self.ledServ.lightAllLed([255, 0, 0])
             time.sleep(blink_length)
+        self.ledServ.turnOffAllLed()
